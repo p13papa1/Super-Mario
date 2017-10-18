@@ -35,6 +35,8 @@ body {
 
 			this.load.tilemap('level', 'assets/super_mario_map.json', null,
 					Phaser.Tilemap.TILED_JSON);
+			this.score=0;
+                        this.scoreText='';
 		}
 
 		function create() {
@@ -83,6 +85,7 @@ body {
 			game.camera.follow(player);
 
 			cursors = game.input.keyboard.createCursorKeys();
+			this.scoreText = game.add.text(0, 520, 'Score: 0', { fontSize: '34px Arial', fill: 'green' });
 		}
 
 		function update() {
@@ -127,6 +130,8 @@ body {
 			coin.kill();
 		        var audio = new Audio('audio/coin.wav');
 			audio.play()
+			this.score+=10;
+                        this.scoreText.text= 'Score: ' + this.score;
 		}
 
 		function goombaOverlap(player, goomba) {
