@@ -25,10 +25,8 @@ body {
 			update : update
 		}, false, false);
 		
-		var Super-Mario = function (game) {
-			this.score=0;
-                        this.scoreText='';
-         };
+		
+        
 
 		function preload() {
 
@@ -46,6 +44,8 @@ body {
 			this.load.tilemap('level', 'assets/super_mario_map.json', null,
 					Phaser.Tilemap.TILED_JSON);
 			
+			this.score=0;
+                        this.scoreText='';
 		}
 
 		function create() {
