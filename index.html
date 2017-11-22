@@ -24,6 +24,11 @@ body {
 			create : create,
 			update : update
 		}, false, false);
+		var score = 0;
+                var scoreText;
+                var life = 3;
+                var lifeText;
+                var gameoverText;
 		
 		
         
@@ -94,7 +99,10 @@ body {
 			game.camera.follow(player);
 
 			cursors = game.input.keyboard.createCursorKeys();
-			//this.scoreText = game.add.text(0, 520, 'Score: 0', { fontSize: '34px Arial', fill: 'green' });
+			scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '16px', fill: '#000' });
+		scoreText.fixedToCamera = true;
+             lifeText = game.add.text(16, 30, 'life: 3', { fontSize: '16px', fill: '#000' });
+		lifeText.fixedToCamera = true;
 		}
 
 		function update() {
@@ -139,8 +147,8 @@ body {
 			coin.kill();
 		        var audio = new Audio('audio/coin.wav');
 			audio.play()
-			//this.score+=10;
-                        //this.scoreText.text= 'Score: ' + this.score;
+			score += 50;
+                        scoreText.text = 'Score: ' + score;
 		}
 
 		function goombaOverlap(player, goomba) {
