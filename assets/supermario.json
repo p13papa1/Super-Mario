@@ -36,6 +36,7 @@
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"left-up",
+ "templategroups":[],
  "tileheight":16,
  "tilesets":[
         {
@@ -45,7 +46,7 @@
          "imageheight":112,
          "imagewidth":48,
          "margin":0,
-         "name":"super_mario_tiles",
+         "name":"tiles",
          "spacing":0,
          "tilecount":21,
          "tileheight":16,
