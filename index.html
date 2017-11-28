@@ -159,6 +159,8 @@ body {
 				player.body.velocity.y = -80;
 				game.time.events.add(Phaser.Timer.SECOND, function() {
 					goomba.kill();
+					score += 100;
+                        scoreText.text = 'Score: ' + score;
 				});
 			} else {
 				player.frame = 6;
