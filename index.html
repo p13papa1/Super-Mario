@@ -164,7 +164,9 @@ body {
 				});
 			} else {life--;
                                 lifeText.text = 'life: ' +life;
-				player.x=player.x-30;}
+				player.x=player.x-30;
+			       var snd =game.add.audio("stomp");
+			snd.play();}
 			if(life==0){
 				player.frame = 6;
 				player.body.enable = false;
