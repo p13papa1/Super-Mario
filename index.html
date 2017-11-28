@@ -162,12 +162,16 @@ body {
 					score += 100;
                         scoreText.text = 'Score: ' + score;
 				});
-			} else {
+			} else {life--;
+                                lifeText.text = 'life: ' +life;
+				player.x=player.x-30;}
+			if(life==0){
 				player.frame = 6;
 				player.body.enable = false;
 				player.animations.stop();
 				game.time.events.add(Phaser.Timer.SECOND * 3, function() {
 					game.paused = true;
+			gameoverText = game.add.text(20, 100, 'GAME OVER', { fontSize: '32px', fill: '#000' });
 				});
 			}
 		}
